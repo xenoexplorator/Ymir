@@ -20,3 +20,8 @@ func _take_damage(damage):
 func kill_player():
 	get_tree().change_scene("res://MainMenu.tscn")
 	get_viewport().canvas_transform.origin = Vector2()
+
+
+func _on_heal(amount):
+	hp = min(hp + amount, max_hp)
+	emit_signal("player_damage", max_hp, hp)

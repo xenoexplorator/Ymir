@@ -120,6 +120,8 @@ position = Vector2( -2, -16 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[connection signal="heal" from="KinematicBody2D" to="." method="_on_heal"]
+
 [connection signal="move_left_leg" from="KinematicBody2D" to="KinematicBody2D/LegLeft" method="move_leg"]
 
 [connection signal="move_right_leg" from="KinematicBody2D" to="KinematicBody2D/LegRight" method="move_leg"]

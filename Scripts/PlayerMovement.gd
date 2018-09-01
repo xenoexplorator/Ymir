@@ -10,6 +10,7 @@ var joy2_x = 0.0
 var joy2_y = 0.0
 signal move_right_leg
 signal move_left_leg
+signal heal
 
 func get_input():
 	joy1_x = Input.get_joy_axis(0, JOY_ANALOG_LX)
@@ -40,3 +41,6 @@ func _physics_process(delta):
 	move_and_slide(velocity())
 	var screen_size = Vector2(1680, 1024)
 	get_viewport().canvas_transform.origin = -position + screen_size / 2
+
+func heal(amount):
+	emit_signal("heal", amount)
