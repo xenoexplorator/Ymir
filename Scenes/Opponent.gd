@@ -1,9 +1,6 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-var hitPoints = 5
+export (int) var hitPoints = 5
 export (int) var attackSpeed = 200 #en centièmes de secondes
 var ticks = 0
 

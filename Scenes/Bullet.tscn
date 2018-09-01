@@ -17,6 +17,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 speed = 10
+power = 1
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
