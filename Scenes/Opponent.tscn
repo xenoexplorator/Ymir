@@ -11,7 +11,7 @@ custom_solver_bias = 0.0
 radius = 39.2539
 height = 95.084
 
-[node name="Opponent" type="Node" index="0"]
+[node name="Opponent" type="Node"]
 
 [node name="Body" type="KinematicBody2D" parent="." index="0"]
 

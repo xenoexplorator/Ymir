@@ -6,6 +6,9 @@ var bullet_scene = preload("res://Scenes/Bullet.tscn")
 
 signal player_damage
 
+func _ready():
+	get_node("KinematicBody2D/Camera2D").make_current()
+
 func _spawn_bullet(player, origin, orientation):
 	var bullet = bullet_scene.instance()
 	bullet.shoot(player, origin, orientation)
