@@ -3,14 +3,14 @@
 [ext_resource path="res://Scenes/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://walls_test.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/HealthPack.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/UIManager.gd" type="Script" id=7]
-[ext_resource path="res://Sprites/barre rouge.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/barre verte.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/HPDisplay.gd" type="Script" id=10]
-[ext_resource path="res://Sounds/Bass-and-choir-free-background-music.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/UIManager.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/barre rouge.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/barre verte.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/HPDisplay.gd" type="Script" id=9]
+[ext_resource path="res://Sounds/Bass-and-choir-free-background-music.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/HealthSpawner.gd" type="Script" id=11]
 
 [node name="Arena" type="Node" index="0"]
 
@@ -72,47 +72,42 @@ format = 1
 tile_data = PoolIntArray( -720896, 0, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720886, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -720878, 0, 0, -720877, 0, 0, -720876, 0, 0, -720875, 0, 0, -720874, 0, 0, -720873, 0, 0, -720872, 0, 0, -720871, 0, 0, -720870, 0, 0, -720869, 0, 0, -720868, 0, 0, -720867, 0, 0, -720866, 0, 0, -720865, 0, 0, -720864, 0, 0, -655360, 0, 0, -655328, 0, 0, -589824, 0, 0, -589792, 0, 0, -524288, 0, 0, -524256, 0, 0, -458752, 0, 0, -458720, 0, 0, -393216, 0, 0, -393184, 0, 0, -327680, 0, 0, -327648, 0, 0, -262144, 0, 0, -262112, 0, 0, -196608, 0, 0, -196576, 0, 0, -131072, 0, 0, -131040, 0, 0, -65536, 0, 0, -65504, 0, 0, 0, 0, 0, 32, 0, 0, 65536, 0, 0, 65568, 0, 0, 131072, 0, 0, 131104, 0, 0, 196608, 0, 0, 196640, 0, 0, 262144, 0, 0, 262176, 0, 0, 327680, 0, 0, 327712, 0, 0, 393216, 0, 0, 393248, 0, 0, 458752, 0, 0, 458784, 0, 0, 524288, 0, 0, 524320, 0, 0, 589824, 0, 0, 589856, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="HealthPack" parent="." index="2" instance=ExtResource( 4 )]
-
-position = Vector2( 522.576, -440.782 )
-power = 15
-
-[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -0.163208, -2.45776 )
 
-[node name="EnemySpawner" parent="." index="4" instance=ExtResource( 6 )]
+[node name="EnemySpawner" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( -23.3826, -424.227 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
-[node name="EnemySpawner2" parent="." index="5" instance=ExtResource( 6 )]
+[node name="EnemySpawner2" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1452.4, 7.30579 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
-[node name="EnemySpawner3" parent="." index="6" instance=ExtResource( 6 )]
+[node name="EnemySpawner3" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( -1495.29, 0.625061 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
-[node name="EnemySpawner4" parent="." index="7" instance=ExtResource( 6 )]
+[node name="EnemySpawner4" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 2.36591, 1003.36 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 
 [node name="LabelScoreP1" type="Label" parent="CanvasLayer" index="0"]
 
@@ -210,25 +205,31 @@ _sections_unfolded = [ "Anchor", "Rect" ]
 [node name="HPUnderBar" type="Sprite" parent="CanvasLayer" index="2"]
 
 position = Vector2( 820, 60 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="HPOverBar" type="Sprite" parent="CanvasLayer/HPUnderBar" index="0"]
 
 position = Vector2( -128, 0 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 offset = Vector2( 128, 0 )
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
+
+[node name="HealthSpawner" type="Node2D" parent="." index="9"]
+
+script = ExtResource( 11 )
+minimum_wait = 2000
+maximum_wait = 4000
 
 [connection signal="player_damage" from="Player" to="CanvasLayer/HPUnderBar/HPOverBar" method="_on_Player_player_damage"]
 
