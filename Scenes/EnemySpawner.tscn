@@ -8,7 +8,7 @@
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-MaxSpawnTime = 150
-MinSpawnTime = 25
+MaxSpawnTime = 550
+MinSpawnTime = 250
 
 
