@@ -14,11 +14,11 @@ radius = 125.721
 
 input_pickable = false
 collision_layer = 2
-collision_mask = 1
+collision_mask = 11
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-hitPoints = 25
+hitPoints = 5
 attackSpeed = 200
 points = 50
 speed = 125

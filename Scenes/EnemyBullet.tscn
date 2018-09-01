@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Circle.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 12.6098
 
-[node name="Bullet" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 4
-collision_mask = 10
+collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
@@ -21,14 +21,13 @@ power = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 0.90625, 0.873477, 0.0672607, 1 )
+modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 

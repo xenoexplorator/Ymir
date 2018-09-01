@@ -7,6 +7,8 @@ export (int) var speed = 125
 var ticks = 0
 signal enemy_death
 var player
+var dir
+var bullet = preload("res://Scenes/EnemyBullet.tscn")
 
 func Position_to(x,y):
 	global_position = Vector2(x,y)
@@ -28,15 +30,18 @@ func _attack_player(delta):
 	ticks += (delta*100)
 	if(ticks >= attackSpeed):
 		_throwAttack()
+		ticks = 0
 
 func _throwAttack():
-	#print("ATTACK!!!")
-	ticks = 0
+	var dirOfAttack = dir.rotated(rand_range(-0.25,0.25))
+	var tempBullet = bullet.instance()
+	tempBullet.shoot(global_position, dirOfAttack)
+	get_parent().add_child(tempBullet)
 
 func _move_towards_player():
-	var dir = (player.global_position - global_position).normalized()
 	move_and_slide(dir * speed)
 
 func _process(delta):
+	dir = (player.global_position - global_position).normalized()
 	_move_towards_player()
 	_attack_player(delta)
