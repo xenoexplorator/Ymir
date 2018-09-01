@@ -14,7 +14,4 @@ func fire(player_index, orientation):
 	if (heat < rate_of_fire):
 		return
 	heat -= rate_of_fire
-	var g_trans = get_global_transform()
-	var origin = global_position
-	var off = offset.rotated(orientation) * g_trans.get_scale()
-	emit_signal("gun_fired", player_index, origin, orientation)
+	emit_signal("gun_fired", player_index, global_position, orientation)
