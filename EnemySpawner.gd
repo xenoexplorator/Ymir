@@ -1,4 +1,4 @@
-extends Node
+extends Sprite
 
 # class member variables go here, for example:
 # var a = 2
@@ -7,8 +7,6 @@ extends Node
 var tickTillNextSpawn = 0
 export (int) var MaxSpawnTime = 150
 export (int) var MinSpawnTime = 25
-const MAP_WIDTH = 1600
-const MAP_HEIGHT = 900
 
 var enemyScene = preload("res://Scenes/Opponent.tscn")
 
@@ -26,5 +24,5 @@ func _process(delta):
 		
 func _spawn_enemy():
 	var node = enemyScene.instance()
-	node.get_node("Body").Position_to(rand_range(0, MAP_WIDTH),rand_range(0, MAP_HEIGHT))
+	node.get_node("Body").Position_to(self.global_position.x, self.global_position.y)
 	add_child(node)
