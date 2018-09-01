@@ -13,12 +13,13 @@ signal enemy_death
 var player
 var dir
 var bullet = preload("res://Scenes/EnemyBullet.tscn")
+var soundEffect
 
 func Position_to(x,y):
 	global_position = Vector2(x,y)
 
 func _ready():
-	pass
+	soundEffect = get_node("Sound")
 
 func Set_Player(node):
 	player = node
@@ -49,6 +50,7 @@ func _throwAttack(deltaTicks):
 		get_parent().add_child(tempBullet)
 		currentNumberOfAttacks += 1
 		currentTicksBetweenAttacks = ticksBetweenShots
+		soundEffect.play(0)
 	else:
 		currentTicksBetweenAttacks -= deltaTicks
 

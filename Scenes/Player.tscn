@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PlayerMovement.gd" type="Script" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://Scripts/PlayerGun.gd" type="Script" id=4]
 [ext_resource path="res://ArtAssets/Arm_R_Pistol.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Gun.gd" type="Script" id=6]
-[ext_resource path="res://ArtAssets/Arm_L3.png" type="Texture" id=7]
-[ext_resource path="res://ArtAssets/Arm_L_Pistol.png" type="Texture" id=8]
-[ext_resource path="res://ArtAssets/Leg_R.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/Leg.gd" type="Script" id=10]
-[ext_resource path="res://ArtAssets/Leg_L.png" type="Texture" id=11]
-[ext_resource path="res://ArtAssets/Corps.png" type="Texture" id=12]
+[ext_resource path="res://Sounds/GUN_FIRE-GoodSoundForYou-820112263.wav" type="AudioStream" id=7]
+[ext_resource path="res://ArtAssets/Arm_L3.png" type="Texture" id=8]
+[ext_resource path="res://ArtAssets/Arm_L_Pistol.png" type="Texture" id=9]
+[ext_resource path="res://ArtAssets/Leg_R.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Leg.gd" type="Script" id=11]
+[ext_resource path="res://ArtAssets/Leg_L.png" type="Texture" id=12]
+[ext_resource path="res://ArtAssets/Corps.png" type="Texture" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -55,11 +56,20 @@ script = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform" ]
 fire_delay = 3
 
+[node name="Sound" type="AudioStreamPlayer" parent="KinematicBody2D/Gun1Sprite/Gun" index="0"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Player1"
+
 [node name="Gun2Sprite" type="Sprite" parent="KinematicBody2D" index="1"]
 
 position = Vector2( -16.5137, -18.1499 )
 rotation = 4.71239
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 offset = Vector2( -11.8865, -58.8463 )
 script = ExtResource( 4 )
@@ -70,29 +80,38 @@ player_index = 1
 
 position = Vector2( 9.78231, -83.9385 )
 rotation = 1.94723
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( 17.478, -3.8549 )
 script = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform" ]
 fire_delay = 3
 
+[node name="Sound" type="AudioStreamPlayer" parent="KinematicBody2D/Gun2Sprite/Gun" index="0"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Player2"
+
 [node name="LegRight" type="Sprite" parent="KinematicBody2D" index="2"]
 
 position = Vector2( 6.52203, 25.3972 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 offset = Vector2( 5.15364, 33.2967 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="LegLeft" type="Sprite" parent="KinematicBody2D" index="3"]
 
 position = Vector2( -12.727, 23.5038 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( -0.526413, 33.9278 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="CharacterSprite" type="Sprite" parent="KinematicBody2D" index="4"]
 
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="5"]
