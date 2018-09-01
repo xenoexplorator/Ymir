@@ -18,7 +18,7 @@ custom_solver_bias = 0.0
 radius = 13.6776
 height = 72.8272
 
-[node name="Player" type="Node"]
+[node name="Player" type="Node2D"]
 
 script = ExtResource( 1 )
 

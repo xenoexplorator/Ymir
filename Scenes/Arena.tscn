@@ -1,25 +1,70 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://walls_test.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 
 [node name="Arena" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="StaticBody2D" parent="." index="0" instance=ExtResource( 2 )]
+[node name="pillars" type="Node" parent="." index="0"]
 
-position = Vector2( 362, 274 )
+[node name="StaticBody2D5" parent="pillars" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -21.7896, -595.639 )
 collision_layer = 8
 _sections_unfolded = [ "Collision" ]
 
-[node name="StaticBody2D2" parent="." index="1" instance=ExtResource( 2 )]
+[node name="StaticBody2D" parent="pillars" index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 1340, 284 )
+position = Vector2( -350.5, 546.145 )
 collision_layer = 8
 _sections_unfolded = [ "Collision" ]
 
-[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+[node name="StaticBody2D2" parent="pillars" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 368.484, 542.513 )
+collision_layer = 8
+_sections_unfolded = [ "Collision" ]
+
+[node name="StaticBody2D3" parent="pillars" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( -657.97, -132.284 )
+collision_layer = 8
+_sections_unfolded = [ "Collision" ]
+
+[node name="StaticBody2D4" parent="pillars" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 691.641, -100.475 )
+collision_layer = 8
+_sections_unfolded = [ "Collision" ]
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+position = Vector2( -1669.87, 86.2104 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -720896, 0, 0, -720895, 0, 0, -720894, 0, 0, -720893, 0, 0, -720892, 0, 0, -720891, 0, 0, -720890, 0, 0, -720889, 0, 0, -720888, 0, 0, -720887, 0, 0, -720886, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720881, 0, 0, -720880, 0, 0, -720879, 0, 0, -720878, 0, 0, -720877, 0, 0, -720876, 0, 0, -720875, 0, 0, -720874, 0, 0, -720873, 0, 0, -720872, 0, 0, -720871, 0, 0, -720870, 0, 0, -720869, 0, 0, -720868, 0, 0, -720867, 0, 0, -720866, 0, 0, -720865, 0, 0, -720864, 0, 0, -655360, 0, 0, -655328, 0, 0, -589824, 0, 0, -589792, 0, 0, -524288, 0, 0, -524256, 0, 0, -458752, 0, 0, -458720, 0, 0, -393216, 0, 0, -393184, 0, 0, -327680, 0, 0, -327648, 0, 0, -262144, 0, 0, -262112, 0, 0, -196608, 0, 0, -196576, 0, 0, -131072, 0, 0, -131040, 0, 0, -65536, 0, 0, -65504, 0, 0, 0, 0, 0, 32, 0, 0, 65536, 0, 0, 65568, 0, 0, 131072, 0, 0, 131104, 0, 0, 196608, 0, 0, 196640, 0, 0, 262144, 0, 0, 262176, 0, 0, 327680, 0, 0, 327712, 0, 0, 393216, 0, 0, 393248, 0, 0, 458752, 0, 0, 458784, 0, 0, 524288, 0, 0, 524320, 0, 0, 589824, 0, 0, 589856, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -0.163208, -2.45776 )
 
 
