@@ -11,14 +11,14 @@ config_version=3
 [application]
 
 config/name="Ymir"
-run/main_scene="res://Root.tscn"
+run/main_scene="res://Scenes/Player.tscn"
 config/icon="res://icon.png"
 
-[display]
+[layer_names]
 
-window/size/width=1680
-window/size/height=1024
-window/size/resizable=false
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Bullets"
 
 [rendering]
 
