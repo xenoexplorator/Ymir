@@ -14,3 +14,9 @@ func _spawn_bullet(player, origin, orientation):
 func _take_damage(damage):
 	hp -= damage
 	emit_signal("player_damage", max_hp, hp)
+	if hp <= 0:
+		kill_player()
+
+func kill_player():
+	get_tree().change_scene("res://MainMenu.tscn")
+	get_viewport().canvas_transform.origin = Vector2()
