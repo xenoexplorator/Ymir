@@ -21,6 +21,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 hitPoints = 25
 attackSpeed = 200
 points = 50
+speed = 125
 
 [node name="Sprite" type="Sprite" parent="Body" index="0"]
 

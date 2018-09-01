@@ -3,16 +3,19 @@ extends KinematicBody2D
 export (int) var hitPoints = 5
 export (int) var attackSpeed = 200 #en centièmes de secondes
 export (int) var points = 50
+export (int) var speed = 125
 var ticks = 0
 signal enemy_death
+var player
 
 func Position_to(x,y):
 	global_position = Vector2(x,y)
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
+
+func Set_Player(node):
+	player = node
 
 func _takeDamage(damage, player_index):
 	hitPoints -= damage
@@ -25,13 +28,14 @@ func _attack_player(delta):
 	ticks += (delta*100)
 	if(ticks >= attackSpeed):
 		_throwAttack()
-		
+
 func _throwAttack():
 	#print("ATTACK!!!")
 	ticks = 0
 
 func _move_towards_player():
-	pass
+	var dir = (player.global_position - global_position).normalized()
+	move_and_slide(dir * speed)
 
 func _process(delta):
 	_move_towards_player()
