@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/EnemySpawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/UIManager.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/barre rouge.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/barre verte.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/HPDisplay.gd" type="Script" id=9]
 
 [node name="Arena" type="Node" index="0"]
 
@@ -70,6 +73,7 @@ _sections_unfolded = [ "Cell", "Collision" ]
 [node name="Player" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( -0.163208, -2.45776 )
+max_hp = 100
 
 [node name="EnemySpawner" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -84,6 +88,7 @@ script = ExtResource( 6 )
 
 [node name="LabelScoreP1" type="Label" parent="CanvasLayer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -129,6 +134,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="LabelScoreP2" type="Label" parent="CanvasLayer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -172,5 +178,18 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="HPUnderBar" type="Sprite" parent="CanvasLayer" index="2"]
+
+position = Vector2( 820, 60 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="HPOverBar" type="Sprite" parent="CanvasLayer/HPUnderBar" index="0"]
+
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+
+[connection signal="player_damage" from="Player" to="CanvasLayer/HPUnderBar/HPOverBar" method="_on_Player_player_damage"]
 
 
