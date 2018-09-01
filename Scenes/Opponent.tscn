@@ -13,12 +13,12 @@ radius = 125.721
 [node name="Body" type="KinematicBody2D" parent="." index="0"]
 
 input_pickable = false
-collision_layer = 2
+collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform" ]
-hitPoints = 25
+_sections_unfolded = [ "Transform" ]
+hitPoints = 5
 attackSpeed = 200
 
 [node name="Sprite" type="Sprite" parent="Body" index="0"]

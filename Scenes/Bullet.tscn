@@ -17,14 +17,14 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 speed = 10
-power = 1
+power = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 modulate = Color( 0.90625, 0.873477, 0.0672607, 1 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 

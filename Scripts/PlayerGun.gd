@@ -1,9 +1,6 @@
 extends Sprite
 
 export (int) var player_index = 0
-export (int) var rate_of_fire = 3
-var heat = 0
-signal gun_fired
 
 func _physics_process(delta):
 	# Orientation du GUN et PEW PEW
@@ -11,15 +8,4 @@ func _physics_process(delta):
 	var joy_y = Input.get_joy_axis(player_index, JOY_ANALOG_RY)
 	if (abs(joy_x) > 0.25 || abs(joy_y) > 0.25):
 		rotation = atan2(joy_x, -joy_y)
-		fire()
-
-func fire():
-	heat += 1
-	if (heat < rate_of_fire):
-		return
-	heat -= rate_of_fire
-	var g_trans = get_global_transform()
-	var orientation = g_trans.get_rotation()
-	var origin = g_trans.get_origin()
-	var off = offset.rotated(orientation) * g_trans.get_scale()
-	emit_signal("gun_fired", player_index, origin + off, orientation)
+		get_node("Gun").fire(player_index, rotation)
