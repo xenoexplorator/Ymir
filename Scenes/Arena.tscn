@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Arena.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sprites/barre rouge.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/barre verte.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/HPDisplay.gd" type="Script" id=9]
+[ext_resource path="res://Sounds/Bass-and-choir-free-background-music.wav" type="AudioStream" id=10]
 
 [node name="Arena" type="Node" index="0"]
 
@@ -76,24 +77,25 @@ position = Vector2( -0.163208, -2.45776 )
 
 [node name="EnemySpawner" parent="." index="3" instance=ExtResource( 5 )]
 
+position = Vector2( -23.3826, -424.227 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
 [node name="EnemySpawner2" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 1452.4, -837.808 )
+position = Vector2( 1452.4, 7.30579 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
 [node name="EnemySpawner3" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( -506.545, -837.808 )
+position = Vector2( -1495.29, 0.625061 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
 [node name="EnemySpawner4" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 309.68, -840.529 )
+position = Vector2( 2.36591, 1003.36 )
 MaxSpawnTime = 2000
 MinSpawnTime = 600
 
@@ -212,6 +214,15 @@ texture = ExtResource( 8 )
 offset = Vector2( 128, 0 )
 script = ExtResource( 9 )
 _sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="player_damage" from="Player" to="CanvasLayer/HPUnderBar/HPOverBar" method="_on_Player_player_damage"]
 

@@ -1,21 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Opponent.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Circle.png" type="Texture" id=2]
+[ext_resource path="res://ArtAssets/Ennemy#1.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/40_smith_wesson_single-mike-koenig.wav" type="AudioStream" id=3]
+[ext_resource path="res://ArtAssets/Ennemy_Gun.png" type="Texture" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 125.721
+radius = 39.2539
+height = 95.084
 
-[node name="Opponent" type="Node"]
+[node name="Opponent" type="Node" index="0"]
 
 [node name="Body" type="KinematicBody2D" parent="." index="0"]
 
 input_pickable = false
 collision_layer = 2
-collision_mask = 1
+collision_mask = 11
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -42,5 +44,13 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Enemy"
+
+[node name="Gun" type="Sprite" parent="Body" index="3"]
+
+position = Vector2( -0.459229, 3.39334 )
+rotation = -0.00284052
+texture = ExtResource( 4 )
+offset = Vector2( -28.031, -0.110405 )
+_sections_unfolded = [ "Transform" ]
 
 

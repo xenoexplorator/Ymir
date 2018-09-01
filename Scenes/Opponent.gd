@@ -26,8 +26,6 @@ func Set_Player(node):
 
 func _takeDamage(damage, player_index):
 	hitPoints -= damage
-	print("HP:",hitPoints)
-	print("damage:",damage)
 	if hitPoints < 0:
 		emit_signal("enemy_death", player_index, points)
 		points = 0
@@ -55,9 +53,11 @@ func _throwAttack(deltaTicks):
 		currentTicksBetweenAttacks -= deltaTicks
 
 func _move_towards_player():
+	get_node("Gun").rotation = (atan2(-dir.x, dir.y))-(PI/2)
 	move_and_slide(dir * speed)
 
 func _process(delta):
 	dir = (player.global_position - global_position).normalized()
 	_move_towards_player()
 	_attack_player(delta*100)
+	
