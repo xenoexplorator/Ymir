@@ -6,15 +6,15 @@ signal gun_fired
 var soundEffect
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	soundEffect = get_node("Sound")
-	pass
+
+func _physics_process(delta):
+	if heat > 0:
+		heat -= 1
 
 func fire(player_index, orientation):
-	heat += 1
-	if (heat < fire_delay):
+	if (heat > 0):
 		return
-	heat -= fire_delay
+	heat = fire_delay
 	emit_signal("gun_fired", player_index, global_position, orientation)
 	soundEffect.play(0)
