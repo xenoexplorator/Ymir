@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 125.721
 
-[node name="Opponent" type="Node"]
+[node name="Opponent" type="Node" index="0"]
 
 [node name="Body" type="KinematicBody2D" parent="." index="0"]
 
@@ -18,8 +18,10 @@ collision_mask = 11
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-hitPoints = 5
+hitPoints = 20
 attackSpeed = 200
+ticksBetweenShots = 30
+numberOfShots = 10
 points = 50
 speed = 125
 

@@ -1,6 +1,6 @@
 extends Node
 
-export (int) var max_hp = 100
+export (float) var max_hp = 100
 var hp = max_hp
 var bullet_scene = preload("res://Scenes/Bullet.tscn")
 

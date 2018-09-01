@@ -11,6 +11,7 @@ func shoot(origin, orientation):
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * speed)
 	if collision:
-		if collision.collider.has_method("_takeDamage"):
-			collision.collider._takeDamage(power)
+		if collision.collider.get_parent().has_method("_take_damage"):
+			collision.collider.get_parent()._take_damage(power)
+			power = 0
 		queue_free()

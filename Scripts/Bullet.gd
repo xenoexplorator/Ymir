@@ -15,4 +15,5 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.has_method("_takeDamage"):
 			collision.collider._takeDamage(power, player_index)
+			power = 0
 		queue_free()
