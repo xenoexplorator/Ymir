@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/PlayerMovement.gd" type="Script" id=1]
-[ext_resource path="res://ArtAssets/Corps.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlayerMovement.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Circle.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Pointer.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/PlayerGun.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/Dereference.png" type="Texture" id=6]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 14.8768
-height = 75.7754
+radius = 29.964
 
 [node name="Player" type="Node" index="0"]
 
@@ -23,14 +26,14 @@ script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 speed = 200
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
+[node name="CharacterSprite" type="Sprite" parent="KinematicBody2D" index="0"]
 
-texture = ExtResource( 2 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
-position = Vector2( -2, -15 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -58,4 +61,5 @@ player_index = 1
 [connection signal="gun_fired" from="KinematicBody2D/Gun1Sprite" to="." method="_spawn_bullet"]
 
 [connection signal="gun_fired" from="KinematicBody2D/Gun2Sprite" to="." method="_spawn_bullet"]
+
 
