@@ -14,6 +14,12 @@ config/name="Ymir"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1680
+window/size/height=1024
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
