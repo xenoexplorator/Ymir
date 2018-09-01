@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 100
+export (int) var speed = 10
 var velocity = Vector2(0, -1)
 
 func shoot(origin, orientation):
@@ -8,4 +8,6 @@ func shoot(origin, orientation):
 	velocity = velocity.rotated(orientation)
 
 func _physics_process(delta):
-	move_and_slide(velocity * speed)
+	var collision = move_and_collide(velocity * speed)
+	if collision:
+		queue_free()

@@ -18,7 +18,7 @@ custom_solver_bias = 0.0
 radius = 13.6776
 height = 72.8272
 
-[node name="Player" type="Node" index="0"]
+[node name="Player" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -26,10 +26,10 @@ script = ExtResource( 1 )
 
 input_pickable = false
 collision_layer = 1
-collision_mask = 1
+collision_mask = 11
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 speed = 200
 
 [node name="Gun1Sprite" type="Sprite" parent="KinematicBody2D" index="0"]

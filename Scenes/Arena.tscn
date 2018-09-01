@@ -4,17 +4,21 @@
 [ext_resource path="res://Scenes/Pillar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 
-[node name="Arena" type="Node"]
+[node name="Arena" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="StaticBody2D" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 362, 274 )
+collision_layer = 8
+_sections_unfolded = [ "Collision" ]
 
 [node name="StaticBody2D2" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 1340, 284 )
+collision_layer = 8
+_sections_unfolded = [ "Collision" ]
 
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
