@@ -207,8 +207,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="HPOverBar" type="Sprite" parent="CanvasLayer/HPUnderBar" index="0"]
 
+position = Vector2( -128, 0 )
 texture = ExtResource( 8 )
+offset = Vector2( 128, 0 )
 script = ExtResource( 9 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [connection signal="player_damage" from="Player" to="CanvasLayer/HPUnderBar/HPOverBar" method="_on_Player_player_damage"]
 

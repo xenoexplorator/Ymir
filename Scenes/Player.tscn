@@ -53,7 +53,7 @@ texture = ExtResource( 5 )
 offset = Vector2( -17.8941, -4.04612 )
 script = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform" ]
-rate_of_fire = 3
+fire_delay = 3
 
 [node name="Gun2Sprite" type="Sprite" parent="KinematicBody2D" index="1"]
 
@@ -74,7 +74,7 @@ texture = ExtResource( 8 )
 offset = Vector2( 17.478, -3.8549 )
 script = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform" ]
-rate_of_fire = 3
+fire_delay = 3
 
 [node name="LegRight" type="Sprite" parent="KinematicBody2D" index="2"]
 

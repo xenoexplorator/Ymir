@@ -28,10 +28,15 @@ func get_input():
 		emit_signal("move_right_leg", atan2(-joy2_x, joy2_y))
 
 func velocity():
-	return velocity_p1.normalized() + velocity_p2.normalized()
+	var effective_speed = speed
+	if velocity_p1.length_squared() == 0:
+		effective_speed /= 2
+	if velocity_p2.length_squared() == 0:
+		effective_speed /= 2
+	return (velocity_p1.normalized() + velocity_p2.normalized()) * effective_speed
 
 func _physics_process(delta):
 	get_input()
-	move_and_slide(velocity() * speed)
+	move_and_slide(velocity())
 	var screen_size = Vector2(1680, 1024)
 	get_viewport().canvas_transform.origin = -position + screen_size / 2
