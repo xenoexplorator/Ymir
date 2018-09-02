@@ -10,6 +10,7 @@ const MAINMENU_SCENE_PATH = "res://MainMenu.tscn"
 signal startGame
 
 func _ready():
+	get_node("StartButton").grab_focus()
 	if(global.game_started == true):
 		set_scores()
 
