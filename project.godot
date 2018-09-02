@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Ymir"
+config/name="King Sologun's Guntlet"
 run/main_scene="res://Root.tscn"
 config/icon="res://icon.png"
 

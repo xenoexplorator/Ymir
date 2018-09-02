@@ -79,25 +79,25 @@ position = Vector2( -0.163208, -2.45776 )
 
 [node name="EnemySpawner" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( -23.3826, -424.227 )
+position = Vector2( -826.551, -835.064 )
 MaxSpawnTime = 1000
 MinSpawnTime = 300
 
 [node name="EnemySpawner2" parent="." index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 1452.4, 7.30579 )
+position = Vector2( 823.19, -836.576 )
 MaxSpawnTime = 1000
 MinSpawnTime = 300
 
 [node name="EnemySpawner3" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( -1495.29, 0.625061 )
+position = Vector2( -1491.59, 689.055 )
 MaxSpawnTime = 1000
 MinSpawnTime = 300
 
 [node name="EnemySpawner4" parent="." index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 2.36591, 1003.36 )
+position = Vector2( 1449.55, 699.859 )
 MaxSpawnTime = 1000
 MinSpawnTime = 300
 
@@ -238,7 +238,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = ExtResource( 11 )
-volume_db = -56.89
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
