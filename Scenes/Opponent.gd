@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var hitPoints = 20
-export (int) var attackSpeed = 1200 #en centièmes de secondes
-export (int) var ticksBetweenShots = 30 #en centièmes de secondes
+export (int) var hitPoints = 40
+export (int) var attackSpeed = 200
+export (int) var ticksBetweenShots = 20 #en centièmes de secondes
 export (int) var numberOfShots = 10
 var currentNumberOfAttacks = 0
 var currentTicksBetweenAttacks = 0
@@ -61,5 +61,5 @@ func _process(delta):
 	dir = distance.normalized()
 	if(distance.length() > 200):
 		_move_towards_player()
-	_attack_player(delta*100)
+	_attack_player(delta * 100)
 	

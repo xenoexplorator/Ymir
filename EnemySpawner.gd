@@ -1,8 +1,8 @@
 extends Sprite
 
 var tickTillNextSpawn = 0
-export (int) var MaxSpawnTime = 2000
-export (int) var MinSpawnTime = 600
+export (int) var MaxSpawnTime = 1000
+export (int) var MinSpawnTime = 300
 
 var enemyScene = preload("res://Scenes/Opponent.tscn")
 
