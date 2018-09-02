@@ -21,7 +21,7 @@ custom_solver_bias = 0.0
 radius = 13.6776
 height = 72.8272
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 max_hp = 100
@@ -127,10 +127,10 @@ anchor_mode = 1
 rotating = false
 current = false
 zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
+limit_left = -1640
+limit_top = -1000
+limit_right = 1620
+limit_bottom = 1180
 limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -146,7 +146,7 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 14 )
-_sections_unfolded = [ "Drag Margin", "Offset" ]
+_sections_unfolded = [ "Drag Margin", "Limit", "Offset" ]
 
 [connection signal="heal" from="KinematicBody2D" to="." method="_on_heal"]
 
@@ -154,11 +154,7 @@ _sections_unfolded = [ "Drag Margin", "Offset" ]
 
 [connection signal="move_right_leg" from="KinematicBody2D" to="KinematicBody2D/LegRight" method="move_leg"]
 
-[connection signal="gun_fired" from="KinematicBody2D/Gun1Sprite/Gun" to="KinematicBody2D/Camera2D" method="shake_camera"]
-
 [connection signal="gun_fired" from="KinematicBody2D/Gun1Sprite/Gun" to="." method="_spawn_bullet"]
-
-[connection signal="gun_fired" from="KinematicBody2D/Gun2Sprite/Gun" to="KinematicBody2D/Camera2D" method="shake_camera"]
 
 [connection signal="gun_fired" from="KinematicBody2D/Gun2Sprite/Gun" to="." method="_spawn_bullet"]
 
