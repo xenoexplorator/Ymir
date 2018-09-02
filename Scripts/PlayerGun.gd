@@ -5,7 +5,6 @@ var trigger_action
 
 func _ready():
 	trigger_action = "player%d_trigger" % (player_index + 1)
-	print(trigger_action)
 
 func _input(event):
 	# Orientation du GUN et PEW PEW

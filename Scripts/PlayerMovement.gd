@@ -41,3 +41,12 @@ func _physics_process(delta):
 
 func heal(amount):
 	emit_signal("heal", amount)
+
+func upgrade_gun(duration, pickup):
+	var delta = pickup - position
+	var claim_p1 = delta.dot(velocity_p1)
+	var claim_p2 = delta.dot(velocity_p2)
+	if claim_p1 == claim_p2:
+		return # probablement pas
+	var player_index = int(claim_p2 > claim_p1)
+	get_parent().upgrade(player_index, duration)
