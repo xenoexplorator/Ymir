@@ -47,7 +47,7 @@ text = "And thus, after the Guntlet, wise king Sologun declared that the real mo
 align = 1
 valign = 1
 autowrap = true
-percent_visible = -0.0125
+percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = 2
 _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
@@ -167,7 +167,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
-[node name="TextureButton" type="TextureButton" parent="." index="4"]
+[node name="QuitButton" type="TextureButton" parent="." index="4"]
 
 modulate = Color( 0.398438, 0.398438, 0.398438, 1 )
 anchor_left = 0.0
@@ -180,6 +180,7 @@ margin_right = 1141.0
 margin_bottom = 990.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_left = NodePath("../StartButton")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -191,9 +192,9 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
-_sections_unfolded = [ "Textures", "Visibility" ]
+_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
-[node name="TextureButton2" type="TextureButton" parent="." index="5"]
+[node name="StartButton" type="TextureButton" parent="." index="5"]
 
 modulate = Color( 0.396078, 0.396078, 0.396078, 1 )
 anchor_left = 0.0
@@ -206,6 +207,7 @@ margin_right = 808.0
 margin_bottom = 992.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+focus_neighbour_right = NodePath("../QuitButton")
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -217,10 +219,10 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
-_sections_unfolded = [ "Textures", "Visibility" ]
+_sections_unfolded = [ "Focus", "Textures", "Visibility" ]
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_Quit_button_up"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_Quit_button_up"]
 
-[connection signal="pressed" from="TextureButton2" to="." method="_on_Start_button_up"]
+[connection signal="pressed" from="StartButton" to="." method="_on_Start_button_up"]
 
 

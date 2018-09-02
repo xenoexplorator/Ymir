@@ -13,8 +13,7 @@ signal startGame
 func _ready():
 	if(global.game_started == true):
 		set_scores()
-	else:
-		get_node("StartButton").grab_focus()
+	get_node("StartButton").grab_focus()
 
 func set_scores():
 	get_node("Player1/Score").text = "%06d" % global.player_1_score
