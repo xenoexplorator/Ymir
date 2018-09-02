@@ -238,7 +238,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = ExtResource( 11 )
-volume_db = -56.89
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
