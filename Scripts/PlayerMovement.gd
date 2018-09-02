@@ -12,7 +12,7 @@ signal move_right_leg
 signal move_left_leg
 signal heal
 
-func get_input():
+func _input(event):
 	joy1_x = Input.get_joy_axis(0, JOY_ANALOG_LX)
 	joy1_y = Input.get_joy_axis(0, JOY_ANALOG_LY)
 	if (abs(joy1_x) < 0.25 && abs(joy1_y) < 0.25):
@@ -37,9 +37,7 @@ func velocity():
 	return (velocity_p1.normalized() + velocity_p2.normalized()) * effective_speed
 
 func _physics_process(delta):
-	get_input()
 	move_and_slide(velocity())
-	var screen_size = Vector2(1680, 1024)
 
 func heal(amount):
 	emit_signal("heal", amount)

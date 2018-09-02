@@ -22,11 +22,9 @@ func _take_damage(damage):
 
 func kill_player():
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
-	get_viewport().canvas_transform.origin = Vector2()
 	
 func get_score(player_index):
 	pass
-
 
 func _on_heal(amount):
 	hp = min(hp + amount, max_hp)
