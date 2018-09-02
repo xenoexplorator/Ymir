@@ -2,10 +2,11 @@ extends TextureRect
 
 # class member variables go here, for example:
 # var a = 2
-# var b = "textvar"<
+# var b = "textvar"
 const ARENA_SCENE_PATH = "res://Scenes/Arena.tscn"
 const TUTORIAL_SCENE_PATH = "res://Scenes/Tutorial.tscn"
 const MAINMENU_SCENE_PATH = "res://MainMenu.tscn"
+const STORY_SCENE_PATH = "res://Scenes/Story.tscn"
 
 signal startGame
 
@@ -27,11 +28,15 @@ func set_scores():
 
 func _on_Start_button_up():
 	global.game_started = true
+	Music.Stop_Music()
 	emit_signal("startGame")
 	get_tree().change_scene(ARENA_SCENE_PATH)
 
 func _on_Tutorial_button_up():
 	get_tree().change_scene(TUTORIAL_SCENE_PATH)
+	
+func _on_story_button_pressed():
+	get_tree().change_scene(STORY_SCENE_PATH)
 
 func _on_Quit_button_up():
 	get_tree().quit()

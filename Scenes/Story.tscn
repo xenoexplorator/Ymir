@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ArtAssets/Story.png" type="Texture" id=1]
 [ext_resource path="res://ArtAssets/Button_Return_P.png" type="Texture" id=2]
 [ext_resource path="res://ArtAssets/Button_Return_A.png" type="Texture" id=3]
-[ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/ReturnButton.gd" type="Script" id=4]
+[ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=5]
 
 [node name="TextureRect" type="TextureRect"]
 
@@ -46,6 +47,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Textures", "Visibility" ]
 
 [node name="Label" type="Label" parent="." index="1"]
@@ -64,7 +66,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "A long time ago reigned wise king Sologun. One day, two women came to him for his judgment. Both claimed to be the mother of a child, and Sologun could not discern truth from lies. Seeing the stalemate, one of the women suggested that they chop the baby in half, allowing both to have a part of it. Sologun refused her barbaric ways and declared his verdict:
 
 
@@ -75,5 +77,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Visibility" ]
+
+[connection signal="pressed" from="Button" to="Button" method="returnToMainMenu"]
 
 

@@ -12,7 +12,7 @@
 [ext_resource path="res://ArtAssets/Button_Quit_P.png" type="Texture" id=10]
 [ext_resource path="res://ArtAssets/Button_Quit_A.png" type="Texture" id=11]
 
-[node name="Root" type="Node"]
+[node name="Root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -163,6 +163,8 @@ texture_hover = ExtResource( 11 )
 _sections_unfolded = [ "Focus", "Mouse", "Size Flags", "Textures", "Theme" ]
 
 [connection signal="pressed" from="TextureRect/StartButton" to="TextureRect" method="_on_Start_button_up"]
+
+[connection signal="pressed" from="TextureRect/StoryButton" to="TextureRect" method="_on_story_button_pressed"]
 
 [connection signal="pressed" from="TextureRect/ControlsButton" to="TextureRect" method="_on_Tutorial_button_up"]
 

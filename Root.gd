@@ -8,7 +8,9 @@ func _ready():
 	pop_up_need_more_controllers()
 		
 func pop_up_need_more_controllers():
-	get_node("AcceptDialog").popup_centered()
+	if(global.messagePoped == false):
+		get_node("AcceptDialog").popup_centered()
+		global.messagePoped = true
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

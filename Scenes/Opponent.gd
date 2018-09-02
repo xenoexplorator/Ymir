@@ -57,7 +57,9 @@ func _move_towards_player():
 	move_and_slide(dir * speed)
 
 func _process(delta):
-	dir = (player.global_position - global_position).normalized()
-	_move_towards_player()
+	var distance = (player.global_position - global_position)
+	dir = distance.normalized()
+	if(distance.length() > 200):
+		_move_towards_player()
 	_attack_player(delta*100)
 	
