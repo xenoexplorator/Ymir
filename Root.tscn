@@ -12,7 +12,7 @@
 [ext_resource path="res://ArtAssets/Button_Quit_P.png" type="Texture" id=10]
 [ext_resource path="res://ArtAssets/Button_Quit_A.png" type="Texture" id=11]
 
-[node name="Root" type="Node" index="0"]
+[node name="Root" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -60,10 +60,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 462.0
-margin_top = 226.0
-margin_right = 708.0
-margin_bottom = 320.0
+margin_left = 506.0
+margin_top = 283.0
+margin_right = 752.0
+margin_bottom = 377.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_right = NodePath("../StoryButton")
@@ -87,10 +87,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 930.0
-margin_top = 228.0
-margin_right = 1180.0
-margin_bottom = 322.0
+margin_left = 927.0
+margin_top = 286.0
+margin_right = 1177.0
+margin_bottom = 380.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../StartButton")
@@ -114,10 +114,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 462.0
-margin_top = 332.0
-margin_right = 713.0
-margin_bottom = 426.0
+margin_left = 333.0
+margin_top = 542.0
+margin_right = 584.0
+margin_bottom = 636.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_top = NodePath("../StartButton")
@@ -141,10 +141,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 930.0
-margin_top = 332.0
-margin_right = 1179.0
-margin_bottom = 422.0
+margin_left = 1040.0
+margin_top = 556.0
+margin_right = 1289.0
+margin_bottom = 646.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_neighbour_left = NodePath("../ControlsButton")
