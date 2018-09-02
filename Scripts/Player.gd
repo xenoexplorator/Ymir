@@ -21,7 +21,7 @@ func _take_damage(damage):
 		kill_player()
 
 func kill_player():
-	get_tree().change_scene("res://MainMenu.tscn")
+	get_tree().change_scene("res://Root.tscn")
 	get_viewport().canvas_transform.origin = Vector2()
 
 
