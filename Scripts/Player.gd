@@ -21,8 +21,11 @@ func _take_damage(damage):
 		kill_player()
 
 func kill_player():
-	get_tree().change_scene("res://Root.tscn")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	get_viewport().canvas_transform.origin = Vector2()
+	
+func get_score(player_index):
+	pass
 
 
 func _on_heal(amount):

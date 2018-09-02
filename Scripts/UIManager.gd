@@ -9,4 +9,6 @@ func _ready():
 
 func _on_points_gained(player_index, points):
 	player_scores[player_index] += points
+	global.player_1_score = player_scores[0]
+	global.player_2_score = player_scores[1]
 	player_score_labels[player_index].text = "%06d" % player_scores[player_index]
