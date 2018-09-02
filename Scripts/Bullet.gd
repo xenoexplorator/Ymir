@@ -8,6 +8,7 @@ var player_index = -1
 func shoot(player, origin, orientation):
 	player_index = player
 	transform.origin = origin
+	rotation = orientation
 	velocity = velocity.rotated(orientation)
 	colorize()
 

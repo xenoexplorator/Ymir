@@ -22,6 +22,7 @@ power = 10
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.304688, 0.218994, 0.218994, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 

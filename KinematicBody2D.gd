@@ -7,6 +7,7 @@ var velocity = Vector2(1, 0)
 func shoot(origin, orientation):
 	transform.origin = origin
 	velocity = velocity.rotated(orientation.angle())
+	rotation = orientation.angle() + (PI/2)
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * speed)
