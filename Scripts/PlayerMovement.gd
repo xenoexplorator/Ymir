@@ -40,9 +40,6 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide(velocity())
 	var screen_size = Vector2(1680, 1024)
-	#get_node("Camera2D").position = global_position
-	
-	#get_viewport().canvas_transform.origin = -position + screen_size / 2
 
 func heal(amount):
 	emit_signal("heal", amount)
